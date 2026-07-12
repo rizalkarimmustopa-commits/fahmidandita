@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Pernikahan - M. Fahmi & N. Nita</title>
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #fdfbf7;
+            --text-main: #333333;
+            --gold-accent: #b8973a;
+            --gold-light: #dfc88b;
+            --dark-green: #1a2f24;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--primary-color);
+            color: var(--text-main);
+            overflow-x: hidden;
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            font-family: 'Cinzel', serif;
+            color: var(--gold-accent);
+        }
+
+        .script-font {
+            font-family: 'Alex Brush', cursive;
+            text-transform: none;
+            font-size: 3.5rem;
+            color: var(--text-main);
+            margin: 10px 0;
+        }
+
+        /* Cover Section */
+        #cover {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: linear-gradient(rgba(253, 251, 247, 0.9), rgba(253, 251, 247, 0.9)), url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070') center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: top 1s ease-in-out;
+            text-align: center;
+            padding: 20px;
+        }
+
+        #cover h3 {
+            font-size: 1.2rem;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+            color: var(--text-main);
+        }
+
+        .btn-open {
+            margin-top: 40px;
+            padding: 12px 30px;
+            background-color: var(--gold-accent);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(184, 151, 58, 0.4);
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .btn-open:hover {
+            background-color: var(--dark-green);
+            transform: translateY(-3px);
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(184, 151, 58, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(184, 151, 58, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(184, 151, 58, 0); }
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 30px rgba(0,0,0,0.05);
+        }
+
+        section {
+            padding: 60px 30px;
+            text-align: center;
+            position: relative;
+            border-bottom: 1px solid rgba(184, 151, 58, 0.2);
+        }
+
+        .bismillah {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--gold-accent);
+        }
+
+        .intro-text {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+        /* Couple Section */
+        .couple-name {
+            margin: 20px 0;
+        }
+        
+        .couple-name h2 {
+            font-family: 'Alex Brush', cursive;
+            font-size: 2.8rem;
+            color: var(--text-main);
+            text-transform: none;
+        }
+
+        .parents {
+            font-size: 0.85rem;
+            color: #777;
+            margin-top: 5px;
+        }
+
+        .and {
+            font-family: 'Alex Brush', cursive;
+            font-size: 2rem;
+            color: var(--gold-accent);
+            margin: 20px 0;
+        }
+
+        /* Event Section */
+        .event-card {
+            background: #faf8f5;
+            border: 1px solid var(--gold-light);
+            border-radius: 15px;
+            padding: 30px 20px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .event-card::before {
+            content: '';
+            position: absolute;
+            top: 5px; left: 5px; right: 5px; bottom: 5px;
+            border: 1px dashed var(--gold-light);
+            border-radius: 12px;
+            pointer-events: none;
+        }
+
+        .event-title {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+        }
+
+        .event-date {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--dark-green);
+        }
+
+        .event-time, .event-location {
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+
+        .btn-map {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: var(--dark-green);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.85rem;
+            transition: 0.3s;
+        }
+
+        .btn-map:hover {
+            background-color: var(--gold-accent);
+        }
+
+        /* Additional Events */
+        .rundown-list {
+            text-align: left;
+            margin-top: 20px;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        
+        .rundown-item {
+            margin-bottom: 15px;
+            padding-left: 15px;
+            border-left: 3px solid var(--gold-accent);
+        }
+
+        .rundown-item strong {
+            color: var(--dark-green);
+            display: block;
+        }
+
+        /* Invitees */
+        .invitees-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+            text-align: left;
+            font-size: 0.8rem;
+            margin-top: 20px;
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .invitees-grid div {
+            padding-bottom: 8px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .invitees-grid div:last-child {
+            border-bottom: none;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--dark-green);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .footer .script-font {
+            color: var(--gold-accent);
+            font-size: 2.5rem;
+        }
+        
+        /* Logo styling in footer */
+        .footer-logo {
+            margin-top: 20px;
+        }
+
+        .footer-logo img {
+            max-width: 150px;
+            height: auto;
+            display: inline-block;
+        }
+
+        /* Audio Player */
+        #audio-control {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--gold-accent);
+            color: white;
+            border-radius: 50%;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            z-index: 1000;
+            font-size: 1.2rem;
+            animation: spin 4s linear infinite;
+        }
+        
+        #audio-control.paused {
+            animation: none;
+        }
+
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+
+    </style>
+</head>
+<body>
+
+    <!-- Audio Element -->
+    <!-- Memanggil lagu yang diminta dengan nama yang sudah disederhanakan -->
+    <audio id="bgMusic" loop>
+        <source src="musik.m4a" type="audio/mp4">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Floating Audio Control -->
+    <div id="audio-control" onclick="toggleAudio()">
+        <i class="fas fa-music"></i>
+    </div>
+
+    <!-- Cover Section -->
+    <div id="cover">
+        <h3>THE WEDDING OF</h3>
+        <h1 class="script-font" style="font-size: 4.5rem;">Fahmi & Nita</h1>
+        <p style="margin-top: 10px; font-weight: 500; letter-spacing: 2px;">23 . 07 . 2026</p>
+        
+        <div style="margin-top: 40px; margin-bottom: 20px;">
+            <p style="font-size: 0.9rem; color: #555;">Kepada Yth.<br>Bapak/Ibu/Saudara/i</p>
+        </div>
+
+        <button class="btn-open" onclick="openInvitation()">
+            <i class="fas fa-envelope-open-text" style="margin-right: 8px;"></i> Buka Undangan
+        </button>
+    </div>
+
+    <!-- Main Content Container -->
+    <div class="container">
+        
+        <!-- Intro Section -->
+        <section>
+            <div class="bismillah">﷽</div>
+            <p>Assalamu'alaikum Wr. Wb.<br>Bismillahirrahmanirrahim</p>
+            <br>
+            <p class="intro-text">
+                Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud menyelenggarakan Syukuran Pernikahan putra-putri kami:
+            </p>
+
+            <div class="couple-name">
+                <h2>M. Fahmi Abduloh</h2>
+                <p class="parents">Putra bungsu dari Bpk. Suganda, S.Pd (Guru SDN Bojong Genteng) & Ibu Lindawati</p>
+            </div>
+
+            <div class="and">&</div>
+
+            <div class="couple-name">
+                <h2>N. Nita Puspitasari, S.Pd</h2>
+                <p class="parents">Putri dari Bpk. Patoni & Ibu Sunce (Bayah Lebak Banten)</p>
+            </div>
+        </section>
+
+        <!-- Event Details Section -->
+        <section>
+            <h2 class="event-title">Waktu & Tempat</h2>
+            <p class="intro-text">Yang insya Allah akan diselenggarakan pada:</p>
+
+            <div class="event-card">
+                <h3 style="margin-bottom: 10px;">KAMIS</h3>
+                <div class="event-date">23 Juli 2026 M<br><span style="font-size: 0.9rem; font-weight: 400;">(08 Safar 1448 H)</span></div>
+                <div class="event-time">
+                    <i class="far fa-clock"></i> Pukul: 08.00 WIB s/d selesai
+                </div>
+                <hr style="border: 0; border-top: 1px solid rgba(184, 151, 58, 0.3); margin: 15px 0;">
+                <div class="event-location">
+                    <strong>Tempat Acara:</strong><br>
+                    Kp. Gandasoli RT. 12 RW. 03<br>
+                    Desa Ciparay, Kec. Jampangkulon<br>
+                    Kab. Sukabumi - Jawa Barat
+                </div>
+                <a href="#" class="btn-map"><i class="fas fa-map-marker-alt"></i> Petunjuk Arah (Google Maps)</a>
+            </div>
+        </section>
+
+        <!-- Rundown / Special Events -->
+        <section>
+            <h2 class="event-title">Rangkaian Acara</h2>
+            
+            <div class="rundown-list">
+                <div class="rundown-item">
+                    <strong>Acara Malam Kamis</strong>
+                    Khotmil Qur'an & Siraman Rohani<br>
+                    Mubaligh: KH. Ahmad Sidik (Karet Jajar Surade)<br>
+                    Qori: Ust. Asep Aji (Cikondang Surade)
+                </div>
+                <div class="rundown-item">
+                    <strong>Kamis Siang</strong>
+                    Penampilan Hadroh GIRAS IQOMAH<br>
+                    (Jampang - Surade)
+                </div>
+            </div>
+        </section>
+
+        <!-- Turut Mengundang Section -->
+        <section>
+            <h2 class="event-title" style="font-size: 1.1rem;">Turut Mengundang</h2>
+            <div class="invitees-grid">
+                <div>Bpk. Dading S.Pd.K.P (Camat Kec. Jampangkulon)</div>
+                <div>Bpk. Asep Saepudin (Kades Desa Ciparay)</div>
+                <div>Bpk. Ali Sutriono M.M.Pd. (Pengawas Bina Kec. Jampangkulon)</div>
+                <div>Ibu Anisah, M.Pd (Pengawas Bina Kec. Jampangkulon)</div>
+                <div>Bpk. Mulyana Lesmana, M. M.Pd (Ketua K3SP Kec. Jampangkulon)</div>
+                <div>Bpk. H. Suryani, S.Pd (Kepsek SDN Bojonggenteng)</div>
+                <div>Staf Guru SDN Bojonggenteng</div>
+                <div>Bpk. M, Makmur Tokoh Ulama</div>
+                <div>Keluarga Besar PGRI Kec. Jampangkulon</div>
+                <div>Keluarga Besar IQOMAH Pajampangan</div>
+                <div>Keluarga Besar DMI PC Kec. Jampangkulon</div>
+                <div>Keluarga Besar FKDT Kec. Jampangkulon</div>
+                <div>Keluarga Besar Pemuda ARGAS</div>
+            </div>
+        </section>
+
+        <!-- Closing Section -->
+        <section style="border-bottom: none;">
+            <p class="intro-text">
+                Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu kepada keluarga kami.<br><br>
+                Atas kehadiran dan Doa restunya kami ucapkan terima kasih.
+            </p>
+            <p style="font-weight: 600; color: var(--dark-green); margin-bottom: 20px;">Wassalamu'alaikum Wr. Wb.</p>
+            
+            <p class="intro-text" style="margin-bottom: 0;">
+                Kami yang berbahagia,<br>
+                <strong>Keluarga Besar Mempelai Pria</strong><br>
+                Bpk Suganda, S.Pd & Ibu Lindawati<br><br>
+                <strong>Keluarga Mempelai Wanita</strong><br>
+                Bpk. Patoni & Ibu Sunce
+            </p>
+        </section>
+
+        <div class="footer">
+            <h2 class="script-font">Fahmi & Nita</h2>
+            <!-- Menampilkan Logo yang baru dengan nama file yang disederhanakan -->
+            <div class="footer-logo">
+                <img src="logo.jpg" alt="Logo FAQIS">
+            </div>
+        </div>
+
+    </div>
+
+    <!-- JavaScript for Animations and Audio -->
+    <script>
+        const audio = document.getElementById("bgMusic");
+        const audioControl = document.getElementById("audio-control");
+        const cover = document.getElementById("cover");
+
+        // Open Invitation function
+        function openInvitation() {
+            // Slide up the cover
+            cover.style.top = "-100vh";
+            
+            // Show audio control
+            audioControl.style.display = "flex";
+            
+            // Play music (Must be triggered by user interaction to bypass browser autoplay policy)
+            audio.play().catch(error => {
+                console.log("Auto-play was prevented. Please click the play button.");
+                audioControl.classList.add("paused");
+                audioControl.innerHTML = '<i class="fas fa-volume-mute"></i>';
+            });
+            
+            // Restore scroll
+            document.body.style.overflow = "auto";
+        }
+
+        // Toggle Audio function
+        function toggleAudio() {
+            if (audio.paused) {
+                audio.play();
+                audioControl.classList.remove("paused");
+                audioControl.innerHTML = '<i class="fas fa-music"></i>';
+            } else {
+                audio.pause();
+                audioControl.classList.add("paused");
+                audioControl.innerHTML = '<i class="fas fa-volume-mute"></i>';
+            }
+        }
+
+        // Prevent scrolling while cover is active
+        document.body.style.overflow = "hidden";
+    </script>
+</body>
+</html>
